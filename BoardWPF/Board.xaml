@@ -1,0 +1,143 @@
+﻿<Window x:Class="BoardWPF.Board1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        Title="Board1" WindowStyle="None" WindowState="Maximized" Width="553">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="background.jpg"/>
+        </Grid.Background>
+        <Rectangle Fill="#FFD46F51" HorizontalAlignment="Center" Height="380" Margin="198,-2,224,0" Stroke="Black" VerticalAlignment="Top" Width="338"/>
+        <Rectangle Fill="#FFD46F51" HorizontalAlignment="Center" Height="380" Margin="197,386,225,-239" Stroke="Black" VerticalAlignment="Top" Width="338"/>
+
+        <Image x:Name="TRight" HorizontalAlignment="Right" Height="100" Margin="0,266,151,161" VerticalAlignment="Center" Width="100" Source="twitter.png" MouseDown="TRight_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="-90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="YRight" HorizontalAlignment="Right" Height="100" Margin="0,352,151,75" VerticalAlignment="Center" Width="100" Source="youtube.png" MouseDown="YRight_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="-90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="FRight" HorizontalAlignment="Right" Height="100" Margin="0,306,74,121" VerticalAlignment="Center" Width="100" Source="facebook.png" MouseDown="FRight_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="-90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="WRight" HorizontalAlignment="Right" Height="100" Margin="0,392,73,35" VerticalAlignment="Center" Width="100" Source="web_icon.png" MouseDown="WRight_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="-90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="TLeft" HorizontalAlignment="Left" Height="100" Margin="197,157,0,247" VerticalAlignment="Center" Width="100" Source="twitter.png" MouseDown="TLeft_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="YLeft" HorizontalAlignment="Left" Height="100" Margin="197,244,0,160" VerticalAlignment="Center" Width="100" Source="youtube.png" MouseDown="YLeft_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="FLeft" HorizontalAlignment="Left" Height="100" Margin="278,198,0,206" VerticalAlignment="Center" Width="100" Source="facebook.png" MouseDown="FLeft_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="WLeft" HorizontalAlignment="Left" Height="100" Margin="278,285,0,119" VerticalAlignment="Center" Width="100" Source="web_icon.png" MouseDown="WLeft_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="90" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="TUp" HorizontalAlignment="Center" Height="100" Margin="380,118,280,0" VerticalAlignment="Top" Width="100" Source="twitter.png" MouseDown="TUp_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="180" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="YUp" HorizontalAlignment="Center" Height="100" Margin="340,197,320,0" VerticalAlignment="Top" Width="100" Source="youtube.png" MouseDown="YUp_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="180" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="FUp" HorizontalAlignment="Center" Height="100" Margin="466,117,194,0" VerticalAlignment="Top" Width="100" Source="facebook.png" MouseDown="FUp_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="180" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="WPUp" HorizontalAlignment="Center" Height="99" Margin="425,194,235,0" VerticalAlignment="Top" Width="100" Source="web_icon.png" MouseDown="WPUp_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform Angle="180" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="TDown" HorizontalAlignment="Center" Height="100" Margin="289,0,371,168" VerticalAlignment="Bottom" Width="100" Source="twitter.png" MouseDown="TDown_MouseDown"/>
+
+        <Image x:Name="YDown" HorizontalAlignment="Center" Height="100" Margin="246,0,414,91" VerticalAlignment="Bottom" Width="100" Source="youtube.png" MouseDown="YDown_MouseDown"/>
+
+        <Image x:Name="FDown" HorizontalAlignment="Center" Height="100" Margin="377,0,283,169" VerticalAlignment="Bottom" Width="100" Source="facebook.png" MouseDown="FDown_MouseDown"/>
+
+        <Image x:Name="WDown" HorizontalAlignment="Center" Height="100" Margin="334,0,326,92" VerticalAlignment="Bottom" Width="100" Source="web_icon.png" MouseDown="WDown_MouseDown"/>
+        <cefSharp:ChromiumWebBrowser x:Name="WBUp" HorizontalAlignment="Left" Height="237" Margin="390,-25,-174,0" VerticalAlignment="Top" Width="544"  RenderTransformOrigin="0.5,0.5" Visibility="Hidden" MinWidth="300">
+            <cefSharp:ChromiumWebBrowser.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </cefSharp:ChromiumWebBrowser.RenderTransform>
+        </cefSharp:ChromiumWebBrowser>
+        <cefSharp:ChromiumWebBrowser x:Name="WBDown" HorizontalAlignment="Left" Height="299" Margin="390,432,-389,-227" VerticalAlignment="Top" Width="544" />
+        <cefSharp:ChromiumWebBrowser x:Name="WBRight" HorizontalAlignment="Right" Margin="0,106,-221,100" Width="772"  Height="321" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <cefSharp:ChromiumWebBrowser.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </cefSharp:ChromiumWebBrowser.RenderTransform>
+        </cefSharp:ChromiumWebBrowser>
+        <cefSharp:ChromiumWebBrowser x:Name="WBLeft" HorizontalAlignment="Left" Margin="-224,231,0,-25" Width="772"  Height="321" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5">
+            <cefSharp:ChromiumWebBrowser.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </cefSharp:ChromiumWebBrowser.RenderTransform>
+        </cefSharp:ChromiumWebBrowser>
+        <Button x:Name="Btnback" Content="Back" HorizontalAlignment="Center" Margin="633,288,34,195" VerticalAlignment="Center" Width="93" Height="44" Background="#FF0F0D0D" BorderBrush="#FF080707" Foreground="#FFF7F7F7" Click="Btnback_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="BtnbackUP" Content="Back" HorizontalAlignment="Center" Margin="319,106,348,377" VerticalAlignment="Center" Width="93" Height="44" Background="#FF0F0D0D" BorderBrush="#FF080707" Foreground="#FFF7F7F7" Click="Btnback_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="BtnbackLeft" Content="Back" HorizontalAlignment="Left" Margin="277,288,0,195" VerticalAlignment="Center" Width="93" Height="44" Background="#FF0F0D0D" BorderBrush="#FF080707" Foreground="#FFF7F7F7" Click="Btnback_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="BtnbackDown" Content="Back" HorizontalAlignment="Center" Margin="323,0,344,271" VerticalAlignment="Bottom" Width="93" Height="44" Background="#FF0F0D0D" BorderBrush="#FF080707" Foreground="#FFF7F7F7" Click="Btnback_Click" RenderTransformOrigin="0.5,0.5"/>
+    </Grid>
+</Window>
